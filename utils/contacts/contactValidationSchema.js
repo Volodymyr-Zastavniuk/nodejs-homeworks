@@ -1,6 +1,6 @@
 const Joi = require('joi');
 
-const contactsSchema = Joi.object()
+const contactValidationSchema = Joi.object()
   .options({
     abortEarly: false,
   })
@@ -11,4 +11,4 @@ const contactsSchema = Joi.object()
     favorite: Joi.boolean(),
   });
 
-module.exports = contactsSchema;
+module.exports = contactValidationSchema;
