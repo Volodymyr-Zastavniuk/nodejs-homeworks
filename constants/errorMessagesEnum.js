@@ -8,6 +8,9 @@ const errorMessagesEnum = {
   EMAIL_IN_USE: 'Email in use..',
   NOT_ALLOWED: 'Your are not allowed to access this content',
   MULTER_ERROR: 'The request must contain only avatar file',
+  EMAIL_NOT_VERIFIED: 'Please verify your email',
+  NOT_FOUND: 'User not found..',
+  VERIFIED: 'Verification has already been passed ',
 };
 
 module.exports = errorMessagesEnum;

@@ -15,8 +15,11 @@ const login = asyncCatch(async (req, res, next) => {
 
   if (!passwordIsValid)
     return next(new AppError(401, errorMessagesEnum.WRONG_CREDENTIALS));
-
   user.password = undefined;
+
+  if (!user.verify) {
+    return next(new AppError(401, errorMessagesEnum.EMAIL_NOT_VERIFIED));
+  }
 
   const token = signToken(user.id);
   await addToken(user.id, token);

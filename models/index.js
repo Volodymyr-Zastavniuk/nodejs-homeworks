@@ -16,6 +16,8 @@ const {
   getUserById,
   checkUserExistsByEmail,
   updateUserData,
+  getUserByVerificationToken,
+  getUserByEmail,
 } = require('./users');
 
 module.exports = {
@@ -33,4 +35,6 @@ module.exports = {
   getUserById,
   checkUserExistsByEmail,
   updateUserData,
+  getUserByVerificationToken,
+  getUserByEmail,
 };

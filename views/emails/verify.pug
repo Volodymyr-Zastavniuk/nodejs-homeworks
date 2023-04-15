@@ -1,0 +1,15 @@
+extends layout/base
+
+block content
+  p Hi! 
+  p To verify your email: #{to} please click on the button below.
+  table.btn.btn-primary(role="presentation", border="0", cellpadding="0", cellspacing="0")
+    tbody
+      tr
+        td(align="left")
+          table(role="presentation", border="0", cellpadding="0", cellspacing="0")
+            tbody
+              tr
+                td
+                  a(href=`${url}`, target="_blank") Verify my email
+  p Good luck!

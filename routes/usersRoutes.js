@@ -19,6 +19,8 @@ const {
   getMe,
   updateSubscription,
   updateUserAvatar,
+  verifyEmail,
+  sendVerificationLink,
 } = require('../controllers');
 
 router.post('/register', checkUserData, asyncCatch(signup));
@@ -39,5 +41,8 @@ router.patch(
   asyncCatch(uploadUserAvatar),
   asyncCatch(updateUserAvatar)
 );
+
+router.get('/verify/:verificationToken', asyncCatch(verifyEmail));
+router.post('/verify', asyncCatch(sendVerificationLink));
 
 module.exports = router;
