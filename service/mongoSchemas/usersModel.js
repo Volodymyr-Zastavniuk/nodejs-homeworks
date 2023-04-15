@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+const gravatar = require('gravatar');
 const { userSubscriptionEnum } = require('../../constants');
 
 const userSchema = new mongoose.Schema(
@@ -25,6 +26,7 @@ const userSchema = new mongoose.Schema(
       type: String,
       default: null,
     },
+    avatarURL: String,
   },
   {
     timestamps: true,
@@ -32,6 +34,14 @@ const userSchema = new mongoose.Schema(
 );
 
 userSchema.pre('save', async function (next) {
+  if (this.isNew) {
+    this.avatarURL = gravatar.url(this.email, {
+      s: '200',
+      d: 'retro',
+      protocol: 'https',
+    });
+  }
+
   if (!this.isModified('password')) return next();
 
   const salt = await bcrypt.genSalt(10);

@@ -15,7 +15,7 @@ const {
   checkToken,
   checkContactQuery,
   checkContactOwner,
-} = require('../middliwares');
+} = require('../middlewares');
 
 const router = express.Router();
 

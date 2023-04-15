@@ -1,20 +1,25 @@
 const express = require('express');
+const router = express.Router();
+const { asyncCatch } = require('../utils');
+
+const {
+  checkUserData,
+  checkLoginData,
+  checkToken,
+  checkSubscription,
+  uploadUserAvatar,
+  checkTmpDir,
+  checkAttachedFile,
+} = require('../middlewares');
+
 const {
   signup,
   login,
   logout,
   getMe,
   updateSubscription,
+  updateUserAvatar,
 } = require('../controllers');
-const {
-  checkUserData,
-  checkLoginData,
-  checkToken,
-  checkSubscription,
-} = require('../middliwares');
-const { asyncCatch } = require('../utils');
-
-const router = express.Router();
 
 router.post('/register', checkUserData, asyncCatch(signup));
 router.post('/login', checkLoginData, asyncCatch(login));
@@ -25,6 +30,14 @@ router.patch(
   checkToken,
   checkSubscription,
   asyncCatch(updateSubscription)
+);
+router.patch(
+  '/avatars',
+  checkToken,
+  checkAttachedFile,
+  asyncCatch(checkTmpDir),
+  asyncCatch(uploadUserAvatar),
+  asyncCatch(updateUserAvatar)
 );
 
 module.exports = router;

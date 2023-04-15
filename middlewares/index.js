@@ -10,6 +10,9 @@ const {
   checkLoginData,
   checkToken,
   checkSubscription,
+  uploadUserAvatar,
+  checkTmpDir,
+  checkAttachedFile,
 } = require('./users');
 
 module.exports = {
@@ -22,4 +25,7 @@ module.exports = {
   checkLoginData,
   checkToken,
   checkSubscription,
+  uploadUserAvatar,
+  checkTmpDir,
+  checkAttachedFile,
 };
