@@ -7,6 +7,7 @@ const errorMessagesEnum = {
   WRONG_CREDENTIALS: 'Email or password is wrong',
   EMAIL_IN_USE: 'Email in use..',
   NOT_ALLOWED: 'Your are not allowed to access this content',
+  MULTER_ERROR: 'The request must contain only avatar file',
 };
 
 module.exports = errorMessagesEnum;

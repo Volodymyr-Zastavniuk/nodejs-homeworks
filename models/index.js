@@ -5,6 +5,7 @@ const {
   addContact,
   updateContact,
   checkContactExistById,
+  totalCount,
 } = require('./contacts');
 
 const {
@@ -14,7 +15,7 @@ const {
   logoutUser,
   getUserById,
   checkUserExistsByEmail,
-  updateUserSubscription,
+  updateUserData,
 } = require('./users');
 
 module.exports = {
@@ -23,6 +24,7 @@ module.exports = {
   removeContact,
   addContact,
   updateContact,
+  totalCount,
   checkContactExistById,
   addUser,
   addToken,
@@ -30,5 +32,5 @@ module.exports = {
   logoutUser,
   getUserById,
   checkUserExistsByEmail,
-  updateUserSubscription,
+  updateUserData,
 };

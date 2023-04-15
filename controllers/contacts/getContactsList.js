@@ -1,5 +1,4 @@
-const { listContacts } = require('../../models');
-const { totalCount } = require('../../models/contacts');
+const { listContacts, totalCount } = require('../../models');
 
 const getContactsList = async (req, res) => {
   const { limit, page, favorite } = req.query;

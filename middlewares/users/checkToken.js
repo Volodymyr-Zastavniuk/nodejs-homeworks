@@ -19,12 +19,11 @@ const checkToken = asyncCatch(async (req, res, next) => {
   }
 
   const currentUser = await getUserById(decoded.id);
-
-  if (!currentUser || !currentUser.token)
+  // || currentUser.token !== token  - to compare token in database with token in authorization header
+  if (!currentUser || currentUser.token !== token)
     return next(new AppError(401, errorMessagesEnum.NOT_LOGGED_IN));
 
   req.user = currentUser;
-
   next();
 });
 

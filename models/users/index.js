@@ -4,7 +4,7 @@ const checkUserExistsByEmail = require('./checkUserExistsByEmail');
 const getUserById = require('./getUserById');
 const loginUser = require('./loginUser');
 const logoutUser = require('./logoutUser');
-const updateUserSubscription = require('./updateUserSubscription');
+const updateUserData = require('./updateUserData');
 module.exports = {
   addUser,
   addToken,
@@ -12,5 +12,5 @@ module.exports = {
   logoutUser,
   getUserById,
   checkUserExistsByEmail,
-  updateUserSubscription,
+  updateUserData,
 };
