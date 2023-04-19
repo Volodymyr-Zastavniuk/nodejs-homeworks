@@ -13,6 +13,8 @@ const {
   getMe,
   updateSubscription,
   updateUserAvatar,
+  verifyEmail,
+  sendVerificationLink,
 } = require('./users');
 
 module.exports = {
@@ -27,4 +29,6 @@ module.exports = {
   getMe,
   updateSubscription,
   updateUserAvatar,
+  verifyEmail,
+  sendVerificationLink,
 };

@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const gravatar = require('gravatar');
+const uuid = require('uuid').v4;
 const { userSubscriptionEnum } = require('../../constants');
 
 const userSchema = new mongoose.Schema(
@@ -26,7 +27,18 @@ const userSchema = new mongoose.Schema(
       type: String,
       default: null,
     },
-    avatarURL: String,
+    avatarURL: {
+      type: String,
+    },
+    verify: {
+      type: Boolean,
+      default: false,
+    },
+    verificationToken: {
+      type: String,
+      // required: [true, 'Verify token is required'],
+      default: null,
+    },
   },
   {
     timestamps: true,
@@ -40,6 +52,7 @@ userSchema.pre('save', async function (next) {
       d: 'retro',
       protocol: 'https',
     });
+    this.verificationToken = uuid();
   }
 
   if (!this.isModified('password')) return next();

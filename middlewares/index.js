@@ -13,6 +13,7 @@ const {
   uploadUserAvatar,
   checkTmpDir,
   checkAttachedFile,
+  checkEmailVerification,
 } = require('./users');
 
 module.exports = {
@@ -28,4 +29,5 @@ module.exports = {
   uploadUserAvatar,
   checkTmpDir,
   checkAttachedFile,
+  checkEmailVerification,
 };

@@ -1,4 +1,5 @@
 const checkAttachedFile = require('./checkAttachedFile');
+const checkEmailVerification = require('./checkEmailVerification');
 const checkLoginData = require('./checkLoginData');
 const checkSubscription = require('./checkSubscription');
 const checkTmpDir = require('./checkTmpDir');
@@ -14,4 +15,5 @@ module.exports = {
   uploadUserAvatar,
   checkTmpDir,
   checkAttachedFile,
+  checkEmailVerification,
 };
